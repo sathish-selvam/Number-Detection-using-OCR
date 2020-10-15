@@ -52,7 +52,7 @@ for f1 in files:
 
 
     # cv2.imshow('result', img2)
-    cv2.imwrite("output/"+newfileName+"_wm.png", img2)
+    cv2.imwrite("output/FirstFry/"+newfileName+".png", img2)
 
 
 

@@ -20,12 +20,13 @@ class MyImage:
     def __str__(self):
         return self.__name
 
-img_dir = ".\Images\\"
+img_dir = ".\output\FirstFry"
 data_path = os.path.join(img_dir,'*g')
 files = glob.glob(data_path)
 data = []
-for f1 in files:
 
+for f1 in files:
+    print(f1);
     img = cv2.imread(f1)
     img2 = img.copy()
     hImg, wImg,_ = img2.shape
@@ -53,14 +54,7 @@ for f1 in files:
 
 
     # cv2.imshow('result', img2)
-    cv2.imwrite("output/"+newfileName, img2)
-
-
-
-
-
-
-
+    cv2.imwrite("output/SecondFry/"+newfileName, img2)
 
 
 

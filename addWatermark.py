@@ -14,7 +14,7 @@ class MyImage:
     def __str__(self):
         return self.__name
 
-img_dir = ".\output\\second fry"
+img_dir = ".\output\SecondFry"
 data_path = os.path.join(img_dir,'*g')
 files = glob.glob(data_path)
 data = []
@@ -23,7 +23,7 @@ for f1 in files:
     base = Image.open(f1).convert('RGBA')
     width, height = base.size
     imageName = MyImage(f1);
-    newfileName = str(imageName).replace(img_dir, "");
+    newfileName = str(imageName).replace(img_dir, "").replace(".png","");
     print(newfileName)
     # make a blank image for the text, initialized to transparent text color
     txt = Image.new('RGBA', base.size, (255, 255, 255, 0))
@@ -41,7 +41,7 @@ for f1 in files:
 
     out = Image.alpha_composite(base, txt)
     # out.show()
-    out.save('output/watermark/'+newfileName)
+    out.save('output/watermark/'+newfileName+"_wm.png")
 
 
     # cv2.imshow('result', img2)
